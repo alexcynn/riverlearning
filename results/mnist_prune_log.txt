@@ -1,0 +1,23 @@
+MNIST River Learning — h=256 with pruning, 100 epochs
+=======================================================
+Config: 784→256→10, train=10000, prune 10% every 10 epochs
+Device: Apple M4 CPU (single core)
+
+MNIST prune: 784→256→10 train=10000
+  start: test=0.114 alive=256
+  ep1: test=0.777 train=0.687 alive=256/256 t=1.6s *
+  ep4: test=0.827 train=0.818 alive=256/256 t=1.0s *
+  ep10: test=0.653 train=0.707 alive=230/256 t=1.5s PRUNE 256→230
+  ep20: test=0.452 train=0.760 alive=206/256 t=1.1s PRUNE 230→206
+  ep30: test=0.471 train=0.795 alive=185/256 t=0.9s PRUNE 206→185
+  ep40: test=0.549 train=0.818 alive=166/256 t=0.7s PRUNE 185→166
+  ep50: test=0.788 train=0.837 alive=149/256 t=0.6s PRUNE 166→149
+  ep57: test=0.870 train=0.849 alive=149/256 t=0.5s
+  ep60: test=0.504 train=0.855 alive=134/256 t=0.5s PRUNE 149→134
+  ep70: test=0.449 train=0.864 alive=120/256 t=0.4s PRUNE 134→120
+  ep80: test=0.608 train=0.882 alive=107/256 t=0.3s PRUNE 120→107
+  ep90: test=0.409 train=0.899 alive=96/256 t=0.3s PRUNE 107→96
+  ep98: test=0.888 train=0.909 alive=96/256 t=0.2s *best*
+  ep100: test=0.886 train=0.914 alive=96/256 t=0.2s
+
+best: 0.888, final alive: 96/256 (62% pruned)
